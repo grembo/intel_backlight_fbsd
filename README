@@ -34,3 +34,9 @@ Usage:
   $ intel_backlight decr
   current backlight value: 60% (562/937)
   set backlight to 51% (478/937)
+
+The included example allows adjusting brightness automatically based on the
+input of the isl driver (currently not part of standard FreeBSD).
+
+Usage:
+  ./isl_backlight.sh &
