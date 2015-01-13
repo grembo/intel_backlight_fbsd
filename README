@@ -19,3 +19,18 @@ Usage:
   $ intel_backlight 50
   current backlight value: 15% (141/937)
   set backlight to 50% (469/937)
+  $ intel_backlight incr
+  current backlight value: 50% (469/937)
+  set backlight to 51% (478/937)
+  $ intel_backlight incr
+  current backlight value: 51% (478/937)
+  set backlight to 60% (562/937)
+  $ intel_backlight incr
+  current backlight value: 60% (562/937)
+  set backlight to 70% (656/937)
+  $ intel_backlight decr
+  current backlight value: 70% (656/937)
+  set backlight to 60% (562/937)
+  $ intel_backlight decr
+  current backlight value: 60% (562/937)
+  set backlight to 51% (478/937)
