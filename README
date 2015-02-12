@@ -36,6 +36,16 @@ Usage:
   current backlight value: 60% (562/937)
   set backlight to 51% (478/937)
 
+Also you can:
+# pkg install xbindkeys
+and add/create in ~/.xbindkeysrc
+"intel_backlight decr"
+        Alt + F2
+"intel_backlight incr"
+        Alt + F3
+Than you can just use Alt+F2/F3 for this, for example, as they are labeled
+with the symbols of up/down brightness in the Samsung Ativ Book2 laptop. 
+
 The included example allows adjusting brightness automatically based on the
 input of the isl driver (currently not part of standard FreeBSD).
 
