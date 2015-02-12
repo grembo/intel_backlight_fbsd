@@ -11,7 +11,6 @@ Build:
   git clone https://github.com/grembo/intel_backlight_fbsd
   cd intel_backlight_fbsd
   make install
-
 (this installs intel_backlight setuid root, so any user can execute it).
 
 Usage:
@@ -40,10 +39,10 @@ Also you can:
 # pkg install xbindkeys
 and add/create in ~/.xbindkeysrc
 "intel_backlight decr"
-        Alt + F2
+        control+shift + F2
 "intel_backlight incr"
-        Alt + F3
-Than you can just use Alt+F2/F3 for this, for example, as they are labeled
+        control+shift + F3
+Then you can just use Ctrl+Shift+F2/F3 for this, for example, as they are labeled
 with the symbols of up/down brightness in the Samsung Ativ Book2 laptop. 
 
 The included example allows adjusting brightness automatically based on the
