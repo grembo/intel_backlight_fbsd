@@ -42,8 +42,8 @@ and add/create in ~/.xbindkeysrc
         control+shift + F2
 "intel_backlight incr"
         control+shift + F3
-Then you can just use Ctrl+Shift+F2/F3 for this, for example, as they are labeled
-with the symbols of up/down brightness in the Samsung Ativ Book2 laptop. 
+Then you can just use Ctrl+Shift+F2/F3 for this, for example, as they are
+labeled with the symbols of up/down brightness in the Samsung Ativ Book2 laptop. 
 
 The included example allows adjusting brightness automatically based on the
 input of the isl driver (currently not part of standard FreeBSD).
