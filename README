@@ -4,11 +4,11 @@ including i915.
 This has been taken from intel-gpu-tools which can be found
 here: http://cgit.freedesktop.org/xorg/app/intel-gpu-tools/
 
-Originally ported to FreeBSD by "emmex" of the FreeBSD forums.
+This is a fork of https://github.com/grembo/intel_backlight_fbsd.
 
 Build:
   pkg install git libdrm libpciaccess
-  git clone https://github.com/grembo/intel_backlight_fbsd
+  git clone https://github.com/maurizio-emmex/intel_backlight_fbsd
   cd intel_backlight_fbsd
   make install
 (this installs intel_backlight setuid root, so any user can execute it).
