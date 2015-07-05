@@ -2,9 +2,9 @@
 
 update_brightness()
 (
-	BRIGHTNESS=$(( `sysctl -n dev.isl.0.ir` / 10 ))
-	if [ $BRIGHTNESS -lt 10 ]; then
-		BRIGHTNESS=10  
+	BRIGHTNESS=$(( `sysctl -n dev.isl.0.als` ))
+	if [ $BRIGHTNESS -lt 15 ]; then
+		BRIGHTNESS=15
 	fi
 	if [ $BRIGHTNESS -gt 100 ]; then
 		BRIGHTNESS=100  
