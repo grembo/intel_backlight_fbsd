@@ -4,13 +4,13 @@ including i915.
 This has been taken from intel-gpu-tools which can be found
 here: http://cgit.freedesktop.org/xorg/app/intel-gpu-tools/
 
-Originally ported to FreeBSD by "emmex" of the FreeBSD forums.
+This is a fork of https://github.com/grembo/intel_backlight_fbsd.
 
 Build:
-  pkg install libpciaccess libdrm
-  make
+  pkg install git libdrm libpciaccess
+  git clone https://github.com/maurizio-emmex/intel_backlight_fbsd
+  cd intel_backlight_fbsd
   make install
-
 (this installs intel_backlight setuid root, so any user can execute it).
 
 Usage:
@@ -34,6 +34,16 @@ Usage:
   $ intel_backlight decr
   current backlight value: 60% (562/937)
   set backlight to 51% (478/937)
+
+Also you can:
+# pkg install xbindkeys
+and add/create in ~/.xbindkeysrc
+"intel_backlight decr"
+        control+shift + F2
+"intel_backlight incr"
+        control+shift + F3
+Then you can just use Ctrl+Shift+F2/F3 for this, for example, as they are
+labeled with the symbols of up/down brightness in the Samsung Ativ Book2 laptop. 
 
 The included example allows adjusting brightness automatically based on the
 input of the isl driver (currently not part of standard FreeBSD).
