@@ -115,9 +115,15 @@ intel_check_pch(void)
 	case 0x9c00:
 		pch = PCH_LPT;
 		break;
+	case 0xA100:
+	case 0x9D00:
+		pch = PCH_SPT;
+		break;
+	case 0xA200:
+		pch = PCH_KBP;
+		break;
 	default:
 		pch = PCH_NONE;
 		return;
 	}
 }
-

@@ -103,6 +103,8 @@ enum pch_type {
 	PCH_IBX,
 	PCH_CPT,
 	PCH_LPT,
+	PCH_SPT,
+	PCH_KBP,
 };
 
 extern enum pch_type pch;
