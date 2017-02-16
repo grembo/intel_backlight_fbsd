@@ -11,7 +11,6 @@ update_brightness()
 	BRIGHTNESS_LEFT=$(( `sysctl -n dev.asmc.0.light.left` ))
 	BRIGHTNESS=0;
 	if [ $BRIGHTNESS_LEFT -gt 0 ] & [ $BRIGHTNESS_RIGHT -gt 0 ]; then
-		echo Average
 		BRIGHTNESS=$((($BRIGHTNESS_LEFT + $BRIGHTNESS_RIGHT) / 2))
 	elif [ $BRIGHTNESS_LEFT -gt 0 ]; then
 		BRIGHTNESS=$BRIGHTNESS_LEFT
@@ -46,7 +45,7 @@ while sleep 1; do
 		if [ $DIFF -gt 4 ]; then
 			while [ $LAST -gt $NEW ]; do
 				LAST=$(( LAST - 2 ))
-				if [ $DEBUG ]; then
+				if [ $DEBUG -eq 1 ]; then
 					echo Setting value $LAST \(1\)
 				fi
 				intel_backlight $LAST >/dev/null
@@ -58,7 +57,7 @@ while sleep 1; do
 		if [ $DIFF -gt 4 ]; then
 			while [ $LAST -lt $NEW ]; do
 				LAST=$(( LAST + 2 ))
-				if [ $DEBUG ]; then
+				if [ $DEBUG -eq 1 ]; then
 					echo Setting value $LAST \(2\)
 				fi
 				intel_backlight $LAST >/dev/null
