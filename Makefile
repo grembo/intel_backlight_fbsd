@@ -18,8 +18,8 @@ intel_backlight: $(SRC)
 install: intel_backlight
 	mkdir -p "$(DESTDIR)$(PREFIX)/bin"
 	install -m4555 intel_backlight "$(DESTDIR)$(PREFIX)/bin"
-	mkdir -p "${MANPREFIX}/man/man1"
-	install -m0444 intel_backlight.1 "${MANPREFIX}/man/man1"
+	mkdir -p "$(DESTDIR)$(MANPREFIX)/man/man1"
+	install -m0444 intel_backlight.1 "$(DESTDIR)$(MANPREFIX)/man/man1"
 
 install-strip: install
 	strip "$(DESTDIR)$(PREFIX)/bin/intel_backlight"
