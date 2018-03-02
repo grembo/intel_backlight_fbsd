@@ -15,6 +15,7 @@ intel_backlight: $(SRC)
 	strip intel_backlight
 
 install: intel_backlight
+	mkdir -p "$(DESTDIR)$(PREFIX)/bin"
 	install -m4555 intel_backlight "$(DESTDIR)$(PREFIX)/bin"
 
 clean:
