@@ -18,5 +18,8 @@ install: intel_backlight
 	mkdir -p "$(DESTDIR)$(PREFIX)/bin"
 	install -m4555 intel_backlight "$(DESTDIR)$(PREFIX)/bin"
 
+install-strip: install
+	strip "$(DESTDIR)$(PREFIX)/bin/intel_backlight"
+
 clean:
 	rm -f intel_backlight
