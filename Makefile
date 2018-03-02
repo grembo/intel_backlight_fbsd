@@ -6,6 +6,7 @@ INCS = -I/usr/local/include -I/usr/local/include/libdrm
 LIBS = -L/usr/local/lib
 
 PREFIX ?= /usr/local
+MANPREFIX ?= $(PREFIX)
 SRC = intel_reg_map.c intel_mmio.c intel_backlight.c intel_drm.c intel_pci.c
 
 all: intel_backlight
@@ -17,6 +18,8 @@ intel_backlight: $(SRC)
 install: intel_backlight
 	mkdir -p "$(DESTDIR)$(PREFIX)/bin"
 	install -m4555 intel_backlight "$(DESTDIR)$(PREFIX)/bin"
+	mkdir -p "${MANPREFIX}/man/man1"
+	install -m0444 intel_backlight.1 "${MANPREFIX}/man/man1"
 
 install-strip: install
 	strip "$(DESTDIR)$(PREFIX)/bin/intel_backlight"
