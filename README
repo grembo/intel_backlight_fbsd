@@ -9,7 +9,7 @@ Originally ported to FreeBSD by "emmex" of the FreeBSD forums.
 Build:
   pkg install libpciaccess libdrm
   make
-  make install
+  make install-setuid-strip
 
 (this installs intel_backlight setuid root, so any user can execute it).
 

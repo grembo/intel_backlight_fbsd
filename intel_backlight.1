@@ -58,6 +58,11 @@ backlight back to the default value of 100.
 .El
 .Sh FILES
 .Bl -tag -width ".Pa /dev/null" -compact
+.It Pa /usr/local/share/examples/intel-backlight/asmc_backlight.sh
+An example of a script adjusting brightness automatically based on the
+input of the MacBook
+.Xr asmc 4
+light sensor driver.
 .It Pa /usr/local/share/examples/intel-backlight/isl_backlight.sh
 An example of a script adjusting brightness automatically based on the
 input of the
@@ -68,7 +73,7 @@ driver, which is currently not part of standard
 .Sh EXIT STATUS
 .Ex -std
 .Sh DIAGNOSTICS
-The command may fail for one of the following reasons:
+The command may fail for any of the following reasons:
 .Bl -diag
 .It "Couldn't initialize PCI system: Device not configured"
 The user does not have required permissions to execute
@@ -84,6 +89,7 @@ in the source distribution of
 for a list of supported chipsets.
 .Sh SEE ALSO
 .Xr acpi_video 4 ,
+.Xr asmc 4 ,
 .Xr isl 4
 .Sh HISTORY
 Originally ported to 

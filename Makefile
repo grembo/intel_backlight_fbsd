@@ -15,13 +15,22 @@ intel_backlight: $(SRC)
 	$(CC) -o intel_backlight $(INCS) $(LIBS) $(SRC) $(CFLAGS) $(LDFLAGS)
 	strip intel_backlight
 
-install: intel_backlight
+install-man:
+	mkdir -p "$(DESTDIR)$(MANPREFIX)/man/man1"
+	install -m0444 intel_backlight.1 "$(DESTDIR)$(MANPREFIX)/man/man1"
+
+install: intel_backlight install-man
 	mkdir -p "$(DESTDIR)$(PREFIX)/bin"
-	install -m4555 intel_backlight "$(DESTDIR)$(PREFIX)/bin"
-	mkdir -p "${MANPREFIX}/man/man1"
-	install -m0444 intel_backlight.1 "${MANPREFIX}/man/man1"
+	install -m0555 intel_backlight "$(DESTDIR)$(PREFIX)/bin"
 
 install-strip: install
+	strip "$(DESTDIR)$(PREFIX)/bin/intel_backlight"
+
+install-setuid: intel_backlight install-man
+	mkdir -p "$(DESTDIR)$(PREFIX)/bin"
+	install -m4555 intel_backlight "$(DESTDIR)$(PREFIX)/bin"
+
+install-setuid-strip: install
 	strip "$(DESTDIR)$(PREFIX)/bin/intel_backlight"
 
 clean:
