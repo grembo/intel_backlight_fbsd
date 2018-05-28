@@ -1,23 +1,23 @@
 .\" SPDX-License-Identifier: MIT
-.\" 
+.\"
 .\" Copyright 2018 Mateusz Piotrowski <0mp@FreeBSD.org>
-.\" 
+.\"
 .\" Permission is hereby granted, free of charge, to any person obtaining a
-.\" copy of this software and associated documentation files (the "Software"), 
-.\" to deal in the Software without restriction, including without limitation 
-.\" the rights to use, copy, modify, merge, publish, distribute, sublicense, 
-.\" and/or sell copies of the Software, and to permit persons to whom the 
+.\" copy of this software and associated documentation files (the "Software"),
+.\" to deal in the Software without restriction, including without limitation
+.\" the rights to use, copy, modify, merge, publish, distribute, sublicense,
+.\" and/or sell copies of the Software, and to permit persons to whom the
 .\" Software is furnished to do so, subject to the following conditions:
-.\" 
-.\" The above copyright notice and this permission notice shall be included in 
+.\"
+.\" The above copyright notice and this permission notice shall be included in
 .\" all copies or substantial portions of the Software.
-.\" 
+.\"
 .\" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 .\" IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 .\" FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 .\" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-.\" LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
-.\" FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+.\" LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+.\" FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 .\" DEALINGS IN THE SOFTWARE.
 .Dd March 2, 2018
 .Dt INTEL_BACKLIGHT 1
@@ -32,7 +32,7 @@
 This utility allows to control the brightness of the backlight on certain Intel
 GPUs, including i915.
 .Pp
-The current backlight value is reported every time the program is run. 
+The current backlight value is reported every time the program is run.
 Additionally, if the argument are invalid then a help message is shown.
 .Pp
 The backlight brightness levels that
@@ -50,7 +50,7 @@ Decrease the backlight value to the nearest brightness level.
 Increase the backlight value to the nearest brightness level.
 .It Ar n
 Change the backlight value to
-.Ar n 
+.Ar n
 where
 .Ar n
 should be between 0 and 100. Providing any other integer results in setting the
@@ -67,8 +67,8 @@ light sensor driver.
 An example of a script adjusting brightness automatically based on the
 input of the
 .Xr isl 4
-driver, which is currently not part of standard 
-.Fx . 
+driver, which is currently not part of standard
+.Fx .
 .El
 .Sh EXIT STATUS
 .Ex -std
@@ -82,7 +82,7 @@ as it probably hasn't got the setuid bit set during installation.
 The solution is either to reinstall this program or to run the command as root.
 .El
 .Sh COMPATIBILITY
-See 
+See
 .Pa intel_chipset.h
 in the source distribution of
 .Nm
@@ -92,17 +92,17 @@ for a list of supported chipsets.
 .Xr asmc 4 ,
 .Xr isl 4
 .Sh HISTORY
-Originally ported to 
+Originally ported to
 .Fx
-by 
+by
 .An emmex
-of the 
-.Fx 
+of the
+.Fx
 forums.
 .Pp
 .Nm
 is based on the code that has been taken from the project developing test suite
-and tools for DRM/KMS drivers, which can be found here: 
+and tools for DRM/KMS drivers, which can be found here:
 .Lk http://cgit.freedesktop.org/xorg/app/intel-gpu-tools/
 .Sh AUTHORS
 This
