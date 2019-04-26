@@ -75,7 +75,7 @@ void print_usage() {
 
 int main(int argc, char** argv)
 {
-	uint32_t current, max, min;
+	uint32_t current, max;
 	uint32_t currentReg, maxReg;
 	int result;
 
@@ -104,11 +104,6 @@ int main(int argc, char** argv)
 	current = reg_read(currentReg) & BACKLIGHT_DUTY_CYCLE_MASK;
 	max = reg_read(maxReg) >> 16;
 
-	min = 0.5 + 0.5 * max / 100.0;	// 0.5%
-	/*
-	printf ("min: %d, NUM_ELEMENTS(brightness_levels): %d\n", min,
-		NUM_ELEMENTS(brightness_levels));
-	*/
 	result = 0.5 + current * 100.0 / max;
 	printf ("Current backlight value: %d%% (%d/%d)\n", result, current, max);
 
@@ -117,6 +112,9 @@ int main(int argc, char** argv)
 		if (0 == strcmp(argv[1], "incr"))
 			v = 0.5 + brightness_incr(result) * max / 100.0;
 		else if (0 == strcmp(argv[1], "decr"))
+                  /* allowing decr to turn the backlight off might be a
+                     problem, since it could be done inadvertently and we don't
+                     know if any hw has problems with it. */
 			v = 0.5 + brightness_decr(result) * max / 100.0;
 		else {
 			errno = 0;
@@ -129,13 +127,13 @@ int main(int argc, char** argv)
 				return result;
 			}
 
-			v = 0.5 + val * max / 100.0;
+			v = val * max / 100.0;
 		}
 	    /*
 		printf("v: %d\n", v);
 		*/
-		if (v < min)
-			v = min;
+		if (v < 0)
+			v = 0;
 		else if (v > max)
 			v = max;
 		reg_write(BLC_PWM_CPU_CTL,
@@ -145,7 +143,7 @@ int main(int argc, char** argv)
 		reg_write(currentReg,
 				  (reg_read(currentReg) &~ BACKLIGHT_DUTY_CYCLE_MASK) | v);
 		(void) reg_read(currentReg);
-		result = 0.5 + v * 100.0 / max;
+		result = v * 100.0 / max;
 		printf ("set backlight to %d%% (%d/%d)\n", result, v, max);
 	}
 	return result;
