@@ -1,18 +1,20 @@
-Please always install from ports:
-cd /usr/ports/graphics/intel-backlight
-make install clean
-
-or from packages:
-
-pkg install intel-backlight
-
-In case you run into trouble, please check this fork and report issues there:
-https://github.com/FreeBSDDesktop/intel_backlight_fbsd
-
 ========================================================================
 !!! This repo only exists for historic purposes, it's not maintained !!!
 !!! and issues won't be resolved here.                               !!!
+!!! Please check this fork and report issues there:                  !!!
+!!!                                                                  !!!
+!!!     https://github.com/FreeBSDDesktop/intel_backlight_fbsd       !!!
+!!!                                                                  !!!
 ========================================================================
+
+This is part of FreeBSD ports.
+
+Please install from ports:
+  cd /usr/ports/graphics/intel-backlight
+  make install clean
+
+or from packages:
+  pkg install intel-backlight
 
 This allows to control the backlight level on certain Intel(R) GPUs,
 including i915.
